@@ -1,101 +1,185 @@
+/* Reset and Normalize - Existing CSS */
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+html {
+    line-height: 1;
+}
+body {
+    line-height: inherit;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Normalize.css Form Styles - Existing CSS */
+button, input, optgroup, select, textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+button, input {
+    overflow: visible;
+}
+button, select {
+    text-transform: none;
+}
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+progress {
+    display: inline-block;
+    vertical-align: baseline;
+}
+textarea {
+    overflow: auto;
+}
+[type="checkbox"], [type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+/* End of Normalize.css Form Styles */
+
 /* ===== BASE STYLES ===== */
 
-/* Setting up a robust font stack */
-body {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 20px;
-  line-height: 1.5;
+/*
+  Major Sixth Modular Scale:
+  http://www.modularscale.com/?22&px&1.667&web&text
+*/
+html {
+    font-size: 1.375em; /* 22px */
+    line-height: 1.182em; /* 26px / ~ 120% */
+    padding: 1.182em; /* 26px / ~ 120% */
+    text-rendering: optimizeLegibility;
+}
+label {
+    display: block;
 }
 
-/* Container for the form */
+/* ===== Custom Form Design ===== */
+
+/* Base styles for form */
 form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light gray background */
+    border-radius: 8px;
 }
 
-/* Form heading */
-form h1 {
-  font-size: 1.5em;
-  color: #333;
-  margin-bottom: 20px;
+/* Typography setup */
+body {
+    font-family: 'Lato', 'Helvetica Neue', sans-serif;
+    background-color: #eaeaea; /* Very light gray background */
+    color: #333; /* Dark gray for text */
 }
 
-/* Paragraph under the heading */
-form p {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 20px;
+h1 {
+    font-size: 1.875em; /* Increased font size for better readability */
+    margin-bottom: 20px;
+    color: #111; /* Darker gray for emphasis */
 }
 
-/* Input fields */
+/* Form elements */
+label {
+    margin-bottom: 8px;
+    font-size: 1.125em;
+    color: #555; /* Medium gray for labels */
+}
+
 input[type="email"],
+input[type="checkbox"],
 input[type="submit"] {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: #e6e6e6;
-  border: none;
-  border-radius: 6px;
-  outline: none;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    background-color: #fff; /* White background */
+    border: none; /* No solid borders */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-input[type="email"]:focus {
-  background-color: #d4d4d4;
+/* Placeholder color for email input */
+input[type="email"]::placeholder {
+    color: #888; /* Light gray placeholder */
+}
+
+/* Input hover and focus states */
+input[type="email"]:focus,
+input[type="checkbox"]:focus,
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15); /* Gray glow on focus */
 }
 
 input[type="submit"] {
-  background-color: #5c5c5c;
-  color: #fff;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #444; /* Dark gray for the button */
+    color: #fff; /* White text */
+    cursor: pointer;
 }
 
 input[type="submit"]:hover {
-  background-color: #404040;
+    background-color: #555; /* Slightly lighter gray on hover */
 }
 
-/* Checkbox styling */
-input[type="checkbox"] {
-  transform: scale(1.5);
-  margin-right: 10px;
-}
-
-/* Label styling */
-label {
-  font-size: 1em;
-  color: #666;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-/* Ordered list for form items */
-form ol {
-  padding-left: 0;
-  list-style: none;
-}
-
-form li {
-  margin-bottom: 20px;
-}
-
-/* Media Query for Mobile Responsiveness */
+/* Responsive adjustments */
 @media (max-width: 600px) {
-  form {
-    padding: 15px;
-  }
-
-  input[type="email"],
-  input[type="submit"] {
-    padding: 12px;
-  }
+    form {
+        padding: 15px;
+    }
 }
